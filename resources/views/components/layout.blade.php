@@ -53,7 +53,8 @@
             </div>
         </div>
         </nav>
-    </header>    <main class='bg-white border-gray-200 dark:bg-gray-900 flex-1'>
+    </header>    
+    <main class='bg-white border-gray-200 dark:bg-gray-900 flex-1'>
         <div class="container">
             {{ $slot }}
         </div>
