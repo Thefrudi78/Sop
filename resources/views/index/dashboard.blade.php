@@ -9,10 +9,10 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg" src="{{ asset('img/genshin.jpg') }}" alt="" />
+                <img class="rounded-t-lg" src={{ asset('img/genshin.jpg') }} alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href={{ route('game',['id' => '1']) }}>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Genshin Impact</h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Smash or Pass every character on this list.</p>
@@ -26,10 +26,10 @@
         </div>
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg" src="{{ asset('img/hsr.jpg') }}" alt="" />
+                <img class="rounded-t-lg" src={{ asset('img/hsr.jpg') }} alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href={{ route('game',['id' => '2']) }}>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Honkai Star Rail</h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Smash or Pass every character on this list.</p>
@@ -43,10 +43,10 @@
         </div>
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg" src="{{ asset('img/zzz.webp') }}" alt="" />
+                <img class="rounded-t-lg" src={{ asset('img/zzz.webp') }} alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href={{ route('game',['id' => '3']) }}>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Zenless Zone Zero</h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Smash or Pass every character on this list.</p>
@@ -60,10 +60,10 @@
         </div>
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg" src="{{ asset('img/wuthering_waves.jpg') }}" alt="" />
+                <img class="rounded-t-lg" src={{ asset('img/wuthering_waves.jpg') }} alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href={{ route('game',['id' => '4']) }}>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Wuthering Waves</h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Smash or Pass every character on this list.</p>
