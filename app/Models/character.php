@@ -12,7 +12,6 @@ class character extends Model
     protected $fillable = [
         'name',
         'game_id',
-        'description',
         'image',
     ];
     protected $casts = [

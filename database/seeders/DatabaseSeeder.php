@@ -40,79 +40,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Characters for Genshin Impact
-
-        character::create([
-            'name' => 'Lumine',
-            'game_id' => 1,
-            'description' => 'The Traveler from another world',
-            'image' => 'img/character/lumine.jpg',
-        ]);
-        character::create([
-            'name' => 'Aether',
-            'game_id' => 1,
-            'description' => 'The Traveler from another world',
-            'image' => 'img/character/aether.jpg',
-        ]);
-        character::create([
-            'name' => 'Paimon',
-            'game_id' => 1,
-            'description' => 'The Traveler\'s companion',
-            'image' => 'img/character/paimon.jpg',
-        ]);
+        $genshin = ['Aether', 'Lumine', 'Paimon', 'Diluc', 'Zhongli', 'Raiden Shogun', 'Klee', 'Xiao', 'Ganyu', 'Albedo'];
+        foreach ($genshin as $characterName) {
+            character::create([
+                'name' => $characterName,
+                'game_id' => 1,
+                'image' => 'img/character/genshin/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
+            ]);
+        }
 
         // Characters for Honkai: Star Rail
-
-        character::create([
-            'name' => 'March 7th',
-            'game_id' => 2,
-            'description' => 'A member of the Astral Express crew',
-            'image' => 'img/character/march7th.jpg',
-        ]);
-        character::create([
-            'name' => 'Dan Heng',
-            'game_id' => 2,
-            'description' => 'A member of the Astral Express crew',
-            'image' => 'img/character/danheng.jpg',
-        ]);
-        character::create([
-            'name' => 'Herta',
-            'game_id' => 2,
-            'description' => 'The genius scientist of the Herta Space Station',
-            'image' => 'img/character/herta.jpg',
-        ]);
+        $honkai = ['March 7th', 'Dan Heng', 'Herta'];
+        foreach ($honkai as $characterName) {
+            character::create([
+                'name' => $characterName,
+                'game_id' => 2,
+                'image' => 'img/character/honkai/' . strtolower(str_replace([' ', ':'], '', $characterName)) . '.jpg',
+            ]);
+        }
 
         // Characters for Zenless Zone Zero
-        character::create([
-            'name' => 'Wise',
-            'game_id' => 3,
-            'description' => 'One of the main characters in Zenless Zone Zero',
-            'image' => 'img/character/wise.jpg',
-        ]);
-        character::create([
-            'name' => 'Belle',
-            'game_id' => 3,
-            'description' => 'one of the main characters in Zenless Zone Zero',
-            'image' => 'img/character/belle.jpg',
-        ]);
+        $zenless = ['Wise', 'Belle'];
+        foreach ($zenless as $characterName) {
+            character::create([
+                'name' => $characterName,
+                'game_id' => 3,
+                'image' => 'img/character/zenless/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
+            ]);
+        }
 
         // Characters for Wuthering Waves
-        character::create([
-            'name' => 'Sakura',
-            'game_id' => 4,
-            'description' => 'A warrior from the Wuthering Waves universe',
-            'image' => 'img/character/sakura.jpg',
-        ]);
-        character::create([
-            'name' => 'Kaito',
-            'game_id' => 4,
-            'description' => 'A skilled fighter from the Wuthering Waves universe',
-            'image' => 'img/character/kaito.jpg',
-        ]);
-        character::create([
-            'name' => 'Yuki',
-            'game_id' => 4,
-            'description' => 'A mysterious character from the Wuthering Waves universe',
-            'image' => 'img/character/yuki.jpg',
-        ]);
+        $wuthering = ['Sakura', 'Kaito', 'Yuki'];
+        foreach ($wuthering as $characterName) {
+            character::create([
+                'name' => $characterName,
+                'game_id' => 4,
+                'image' => 'img/character/wuthering_waves/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
+            ]);
+        }
     }
 }

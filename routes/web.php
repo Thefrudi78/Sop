@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\gameController;
+use App\Http\Controllers\dashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,9 +16,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index.dashboard');
-})->name('dashboard');
+Route::get('/', [dashboardController::class, 'index'])
+    ->name('dashboard');
 
 Route::get('/game/{id}', [gameController::class, 'index'])
     ->name('game');
