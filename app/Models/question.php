@@ -9,5 +9,5 @@ class question extends Model
 {
     use HasFactory;
     protected $table = 'questions';
-    protected $fillable = ['image', 'game_id'];
+    protected $fillable = ['image', 'name', 'game_id'];
 }

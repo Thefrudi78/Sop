@@ -32,7 +32,7 @@ class SmashorPassController extends Controller
     {
         $request->validate(['answer' => 'required']);
 
-        $questions = Question::where('category_id', $id)->get();
+        $questions = Question::where('game_id', $id)->get();
         $index = Session::get("question_index_$id", 0);
 
         Answer::create([

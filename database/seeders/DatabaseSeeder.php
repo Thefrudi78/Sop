@@ -84,6 +84,7 @@ class DatabaseSeeder extends Seeder
         foreach (character::all() as $character) {
             question::create([
                 'image' => $character->image,
+                'name' => $character->name,
                 'game_id' => $character->game_id,
             ]);
         }

@@ -1,10 +1,10 @@
 <x-layout>
     <div class="flex justify-center pt-10 pb-10">
         <div class="w-48 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg relative">
-            <img src="{{ asset('img/character/genshin/paimon.jpg') }}" alt="paimon Image"
+            <img src={{ asset($question['image']) }} alt="paimon Image"
                 class="w-full h-full object-cover">            
             <div class="absolute bottom-0 left-0 w-full h-1/3 bg-black/60 backdrop-blur-sm flex items-end justify-center transition-none">
-                <span class="text-white text-lg font-semibold mb-3">Paimon</span>
+                <span class="text-white text-lg font-semibold mb-3">{{ $question['name'] }}</span>
             </div>
         </div>
     </div>

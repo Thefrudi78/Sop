@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\gameController;
 use App\Http\Controllers\dashboardController;
-use app\Http\Controllers\SmashorPassController;
+use App\Http\Controllers\SmashorPassController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
