@@ -6,6 +6,7 @@
   <title>SoP</title>
   
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 
 </head>
 <body class="min-h-screen flex flex-col">

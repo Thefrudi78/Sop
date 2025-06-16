@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
         }
 
         // Characters for Zenless Zone Zero
-        $zenless = ['Wise', 'Belle'];
+        $zenless = ['Wise', 'Belle', 'Yixuan','Jufufu','Elen Joe','Lychaon'];
         foreach ($zenless as $characterName) {
             character::create([
                 'name' => $characterName,
