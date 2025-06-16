@@ -3,12 +3,12 @@
         <div class="relative group w-150 h-72">
             <img
                 src={{ asset($game['image']) }}
-                alt="Sample Image"
+                alt="Game Image"
                 class="w-full h-full object-cover rounded-xl transition duration-300 group-hover:blur-sm"
             />
 
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Click Me</button>
+                <a href={{ route('question') }} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Start</a>
             </div>
         </div>
     </div>
@@ -17,7 +17,8 @@
     @foreach($characters as $character)
         <div class="w-48 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg relative group">
             <img src={{ asset($character['image']) }} alt="{{ $character['name'] }} Image"
-                class="w-full h-full object-cover">            <div class="absolute bottom-0 left-0 w-full h-1/3 bg-black/60 backdrop-blur-sm flex items-end justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                class="w-full h-full object-cover">            
+            <div class="absolute bottom-0 left-0 w-full h-1/3 bg-black/60 backdrop-blur-sm flex items-end justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <span class="text-white text-lg font-semibold mb-3">{{ $character['name'] }}</span>
             </div>
         </div>

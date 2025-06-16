@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\gameController;
 use App\Http\Controllers\dashboardController;
+use app\Http\Controllers\SmashorPassController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,3 +22,12 @@ Route::get('/', [dashboardController::class, 'index'])
 
 Route::get('/game/{id}', [gameController::class, 'index'])
     ->name('game');
+
+Route::get('/question', function () {
+    return view('questionnaire.question');
+})->name('question');
+
+Route::get('/game/{id}/questionnaire/start', [SmashorPassController::class, 'start'])->name('questionnaire.start');
+Route::get('/game/{id}/questionnaire', [SmashorPassController::class, 'show'])->name('questionnaire.show');
+Route::post('/game/{id}/questionnaire', [SmashorPassController::class, 'answer'])->name('questionnaire.answer');
+Route::get('/game/{id}/questionnaire/complete', [SmashorPassController::class, 'complete'])->name('questionnaire.complete');

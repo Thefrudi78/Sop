@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 use App\Models\character;
 use App\Models\game;
+use App\Models\answer;
+use App\Models\question;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -78,5 +80,13 @@ class DatabaseSeeder extends Seeder
                 'image' => 'img/character/wuthering_waves/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
             ]);
         }
+
+        foreach (character::all() as $character) {
+            question::create([
+                'image' => $character->image,
+                'game_id' => $character->game_id,
+            ]);
+        }
+
     }
 }
