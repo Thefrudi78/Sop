@@ -14,13 +14,13 @@
             <div class="flex gap-4">
                 <label class="cursor-pointer">
                     <input type="radio" name="answer" value="true" required class="hidden peer">
-                    <span class="px-6 py-2 bg-blue-600 text-white rounded-lg block hover:bg-blue-700 transition-colors peer-checked:bg-blue-800">
+                    <span class="px-6 py-2 bg-blue-600 text-white rounded-lg block hover:bg-blue-700 transition-colors peer-checked:bg-blue-800 peer-checked:outline peer-checked:outline-2 peer-checked:outline-offset-2 peer-checked:outline-blue-800">
                         Smash!
                     </span>
                 </label>
                 <label class="cursor-pointer">
                     <input type="radio" name="answer" value="false" required class="hidden peer">
-                    <span class="px-6 py-2 bg-blue-600 text-white rounded-lg block hover:bg-blue-700 transition-colors peer-checked:bg-blue-800">
+                    <span class="px-6 py-2 bg-blue-600 text-white rounded-lg block hover:bg-blue-700 transition-colors peer-checked:bg-blue-800 peer-checked:outline peer-checked:outline-2 peer-checked:outline-offset-2 peer-checked:outline-blue-800">
                         Pass!
                     </span>
                 </label>

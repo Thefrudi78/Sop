@@ -49,6 +49,7 @@ class SmashorPassController extends Controller
 
     public function complete($id)
     {
+        Session::forget("question_index_$id");
         return view('questionnaire.complete', compact('id'));
     }
 }
