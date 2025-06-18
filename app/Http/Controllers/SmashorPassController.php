@@ -49,7 +49,18 @@ class SmashorPassController extends Controller
 
     public function complete($id)
     {
-        Session::forget("question_index_$id");
-        return view('questionnaire.complete', compact('id'));
+        $smashed = answer::where('answer', true)
+            ->join('questions', 'answers.question_id', '=', 'questions.id')
+            ->select('answers.*', 'questions.name', 'questions.image')
+            ->get();
+        
+        $passed = answer::where('answer', false)
+            ->join('questions', 'answers.question_id', '=', 'questions.id')
+            ->select('answers.*', 'questions.name', 'questions.image')
+            ->get();
+        
+        answer::truncate();
+        
+        return view('questionnaire.completed', compact('smashed', 'passed', 'id'));
     }
 }
