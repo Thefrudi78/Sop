@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->unsignedBigInteger('game_id');
             $table->string('image')->nullable();
+            $table->integer('smashed')->default(0);
+            $table->integer('passed')->default(0);
+            $table->integer('total')->default(0);
             $table->foreign('game_id')->references('id')->on('game')->onDelete('cascade');
         });
     }

@@ -13,6 +13,9 @@ class character extends Model
         'name',
         'game_id',
         'image',
+        'smashed',
+        'passed',
+        'total',
     ];
     protected $casts = [
         'created_at' => 'datetime',

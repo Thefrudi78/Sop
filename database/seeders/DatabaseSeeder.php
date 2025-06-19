@@ -5,6 +5,7 @@ use App\Models\character;
 use App\Models\game;
 use App\Models\answer;
 use App\Models\question;
+use App\Models\data;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -50,6 +51,9 @@ class DatabaseSeeder extends Seeder
             "Alhaitham",
             "Aloy",
             "Amber",
+            "Arlecchino",
+            "Arataki Itto",
+            "Baizhu",
             "Barbara",
             "Beidou",
             "Bennett",
@@ -149,7 +153,7 @@ class DatabaseSeeder extends Seeder
             character::create([
                 'name' => $characterName,
                 'game_id' => 1,
-                'image' => 'img/character/genshin/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
+                'image' => 'img/character/genshin/' . strtolower(str_replace(' ', '', $characterName)) . '.webp',
             ]);
         }
 
@@ -226,7 +230,7 @@ class DatabaseSeeder extends Seeder
             character::create([
                 'name' => $characterName,
                 'game_id' => 2,
-                'image' => 'img/character/honkai/' . strtolower(str_replace([' ', ':'], '', $characterName)) . '.jpg',
+                'image' => 'img/character/honkai/' . strtolower(str_replace([' ', ':'], '', $characterName)) . '.webp',
             ]);
         }
 
@@ -268,7 +272,7 @@ class DatabaseSeeder extends Seeder
             character::create([
                 'name' => $characterName,
                 'game_id' => 3,
-                'image' => 'img/character/zenless/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
+                'image' => 'img/character/zenless/' . strtolower(str_replace(' ', '', $characterName)) . '.webp',
             ]);
         }
 
@@ -278,7 +282,7 @@ class DatabaseSeeder extends Seeder
             character::create([
                 'name' => $characterName,
                 'game_id' => 4,
-                'image' => 'img/character/wuthering_waves/' . strtolower(str_replace(' ', '', $characterName)) . '.jpg',
+                'image' => 'img/character/wuthering_waves/' . strtolower(str_replace(' ', '', $characterName)) . '.webp',
             ]);
         }
 
