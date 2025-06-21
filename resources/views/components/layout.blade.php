@@ -6,7 +6,31 @@
   <title>SoP</title>
   
     @vite('resources/css/app.css')
+    @vite('resources/css/fade-in.css')
     @vite('resources/js/app.js')
+    <script>
+        function fadeOutAndRemove(element) {
+            if (!element) return;
+            element.classList.remove('animate-fade-in');
+            element.classList.add('animate-fade-out');
+            setTimeout(function () {
+                element.remove();
+            }, 500); // match fade-out duration
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                fadeOutAndRemove(document.getElementById('notif-success'));
+                fadeOutAndRemove(document.getElementById('notif-error'));
+            }, 5000);
+            var closeBtns = document.querySelectorAll('#notif-success .btn-close, #notif-error .btn-close, #notif-success button[aria-label="Close"], #notif-error button[aria-label="Close"]');
+            closeBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    var notif = btn.closest('#notif-success, #notif-error');
+                    fadeOutAndRemove(notif);
+                });
+            });
+        });
+    </script>
 
 </head>
 <body class="min-h-screen flex flex-col">
@@ -66,7 +90,33 @@
             </div>
         </div>
         </nav>
-    </header>    
+    </header> 
+    @if(session('success'))
+    <div id="notif-success" class="fixed top-4 right-4 z-50">
+        <div class="flex items-center bg-blue-600 text-white rounded shadow-lg px-4 py-3 min-w-[300px] animate-fade-in">
+            <div class="flex-1 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM7 11.414l5.207-5.207-1.414-1.414L7 8.586 5.207 6.793 3.793 8.207 7 11.414z"/></svg>
+                <span>{{ session('success') }}</span>
+            </div>
+            <button type="button" class="ml-4 text-white hover:text-gray-200 focus:outline-none" onclick="this.closest('#notif-success').remove()" aria-label="Close">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+    @endif
+    @if(session('error'))
+    <div id="notif-error" class="fixed top-4 right-4 z-50">
+        <div class="flex items-center bg-red-600 text-white rounded shadow-lg px-4 py-3 min-w-[300px] animate-fade-in">
+            <div class="flex-1 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.707c.89 0 1.438-.99.982-1.767L8.982 1.566zm-.982 4.434a.905.905 0 1 1 1.81 0l-.082 3.002a.823.823 0 0 1-1.646 0L8 6zm.002 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                <span>{{ session('error') }}</span>
+            </div>
+            <button type="button" class="ml-4 text-white hover:text-gray-200 focus:outline-none" onclick="this.closest('#notif-error').remove()" aria-label="Close">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+    @endif   
     <main class='bg-white border-gray-200 dark:bg-gray-900 pb-8 flex-1'>
         <div class="container">
             {{ $slot }}
