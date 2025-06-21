@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\question;
 use App\Models\answer;
 use App\Models\character;
-use App\Models\data;
 
 class SmashorPassController extends Controller
 {
@@ -40,6 +39,7 @@ class SmashorPassController extends Controller
 
     public function answer(Request $request, $id)
     {
+        answer::where('created_at', '<', now()->subHour())->delete();
         $request->validate(['answer' => 'required']);
         $order = Session::get("question_order_$id", []);
         $index = Session::get("question_index_$id", 0);

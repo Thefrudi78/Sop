@@ -8,7 +8,8 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
     @foreach($games as $key => $game)
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-transform duration-300">
+            {{-- Use route helper to generate the URL --}}
             <a href={{ route('game',['id' => $key+1]) }}>
                 <img class="rounded-t-lg" src={{ asset($game['image']) }} alt="" />
             </a>
