@@ -8,9 +8,11 @@
     @vite('resources/css/app.css')
     @vite('resources/css/fade-in.css')
     @vite('resources/js/app.js')
+
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 </head>
 <body class="min-h-screen flex flex-col">
-    <header>
+    <header class="sticky top-0 z-40">
         <nav class="bg-white border-gray-200 dark:bg-gray-800">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -42,6 +44,7 @@
                 <a href={{ route('game',['id' => '2']) }} 
                 class="block py-2 px-3 rounded-sm md:bg-transparent md:p-0 {{ Str::contains(request()->path(), 'game') && request()->route('id') == 2 ? 'text-white bg-blue-700 md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
                     Honkai Star Rail
+                    <!-- HSR sucks -->
                 </a>
                 </li>
                 <li>
@@ -94,9 +97,7 @@
     </div>
     @endif   
     <main class='bg-white border-gray-200 dark:bg-gray-900 pb-8 flex-1'>
-        <div class="container">
-            {{ $slot }}
-        </div>
+        {{ $slot }}
     </main>
     <footer class="bg-gray-800 text-white py-4 mt-auto">
         <div class="container text-center">

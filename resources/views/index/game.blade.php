@@ -15,7 +15,7 @@
     <h3 class="text-left text-2xl font-bold pl-15 mb-4">Characters</h3>
     <div class="flex flex-wrap gap-10 justify-center pt-10">
     @foreach($characters as $character)
-        <div class="w-48 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg relative group hover:scale-105 transition-transform duration-300">
+        <div class="w-48 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg relative group hover:scale-105 transition-transform duration-300 animate-fade-in">
             <img src={{ asset($character['image']) }} alt="{{ $character['name'] }} Image"
                 class="w-full h-full object-cover">            
             <div class="absolute bottom-0 left-0 w-full h-1/3 bg-black/60 backdrop-blur-sm flex items-end justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300">
