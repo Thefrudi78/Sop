@@ -16,4 +16,12 @@ class gameController extends Controller
         $game = game::find($id);
         return view('index.game', compact('characters', 'game'));
     }
+
+    public function statistics()
+    {
+        $characters = character::all();
+        $games = game::all();
+        $answers = answer::all();
+        return view('Statistics.index', compact('characters', 'games', 'answers'));
+    }
 }

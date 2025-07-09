@@ -31,3 +31,6 @@ Route::get('/game/{id}/questionnaire/start', [SmashorPassController::class, 'sta
 Route::get('/game/{id}/questionnaire', [SmashorPassController::class, 'show'])->name('questionnaire.show');
 Route::post('/game/{id}/questionnaire', [SmashorPassController::class, 'answer'])->name('questionnaire.answer');
 Route::get('/game/{id}/questionnaire/complete', [SmashorPassController::class, 'complete'])->name('questionnaire.complete');
+
+Route::get('/statistics', [gameController::class, 'statistics'])
+    ->name('statistics');
