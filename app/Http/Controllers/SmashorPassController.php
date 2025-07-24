@@ -55,13 +55,6 @@ class SmashorPassController extends Controller
             'session_id' => Session::getId(),
             'answer' => $answer,
         ]);
-        if ($answer === true) {
-            character::where('id', $question->id)->increment('smashed');
-            character::where('id', $question->id)->increment('total');
-        } else {
-            character::where('id', $question->id)->increment('passed');
-            character::where('id', $question->id)->increment('total');
-        }
         Session::put("question_index_$id", $index + 1);
         return redirect()->route('questionnaire.show', $id);
     }
@@ -83,7 +76,15 @@ class SmashorPassController extends Controller
             ->join('questions', 'answers.question_id', '=', 'questions.id')
             ->select('answers.*', 'questions.name', 'questions.image')
             ->get();
-        
+
+        foreach ($smashed as $smash) {
+            character::where('id', $smash->question_id)->increment('smashed');
+            character::where('id', $smash->question_id)->increment('total');
+        }
+        foreach ($passed as $pass) {
+            character::where('id', $pass->question_id)->increment('passed');
+            character::where('id', $pass->question_id)->increment('total');
+        }
         answer::where('session_id', Session::getId())->delete();
         
         return view('questionnaire.completed', compact('smashed', 'passed', 'id'));
