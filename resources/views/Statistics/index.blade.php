@@ -33,12 +33,21 @@
                         break;
                 }
             @endphp
-            <div class="character-card" data-game="{{ $game }}">
+            <div class="character-card dark:bg-gray-800" data-game="{{ $game }}">
                 <div class="character-image">
                     <img src="{{ asset($character->image) }}" alt="{{ $character->name }} Image" class="w-full h-full object-cover">
                 </div>
-                <div class="character-name">{{ $character->name }}</div>
-                <div class="character-game">{{ $game }}</div>
+                <div class="character-name dark:text-white">{{ $character->name }}</div>
+                <div class="character-game dark:text-gray-400">{{ $game }}</div>
+
+                <div class="flex justify-between mb-1">
+                    <span class="text-base font-medium text-blue-700 dark:text-white">{{ $character->percentage }}%</span>
+                    <span class="text-sm font-medium text-blue-700 dark:text-white">{{ 100-$character->percentage }}%</span>
+                </div>
+                    <div class="w-full bg-red-200 rounded-full h-2.5 dark:bg-red-700">
+                    <div class="bg-green-600 h-2.5 rounded-full" style="width: {{ $character->percentage }}%"></div>
+                </div>
+
             </div>          
         @endforeach
     </div>

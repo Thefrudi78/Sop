@@ -20,8 +20,10 @@ class gameController extends Controller
     public function statistics()
     {
         $characters = character::all();
-        $games = game::all();
-        $answers = answer::all();
-        return view('Statistics.index', compact('characters', 'games', 'answers'));
+
+        foreach ($characters as $character) {
+            $character->percentage = $character->total > 0 ? round($character->smashed / $character->total * 100, 2) : 0;
+        }
+        return view('Statistics.index', compact('characters'));
     }
 }

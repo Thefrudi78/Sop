@@ -106,7 +106,6 @@ body {
 }
 
 .character-card {
-  background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -128,7 +127,7 @@ body {
 }
 
 .character-image {
-  width: 100%;
+  width: 150px;
   height: 200px;
   background: linear-gradient(45deg, #f093fb, #f5576c);
   border-radius: 10px;
@@ -164,13 +163,6 @@ body {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #2c3e50;
-}
-
-.character-game {
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
 }
 
 .character-element {
