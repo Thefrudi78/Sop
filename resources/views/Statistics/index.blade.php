@@ -42,7 +42,7 @@
 
                 <div class="flex justify-between mb-1">
                     <span class="text-base font-medium text-blue-700 dark:text-white">{{ $character->percentage }}%</span>
-                    <span class="text-sm font-medium text-blue-700 dark:text-white">{{ 100-$character->percentage }}%</span>
+                    <span class="text-base font-medium text-blue-700 dark:text-white">{{ 100-$character->percentage }}%</span>
                 </div>
                     <div class="w-full bg-red-200 rounded-full h-2.5 dark:bg-red-700">
                     <div class="bg-green-600 h-2.5 rounded-full" style="width: {{ $character->percentage }}%"></div>
